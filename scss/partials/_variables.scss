@@ -1,0 +1,96 @@
+//VARIABLES
+$tipografia: 'Montserrat', sans-serif;
+
+//MAPS
+$paletaColores:(
+    //GENERAL
+    bg-body: rgb(42,47,88),
+    bg-header: rgb(50, 56, 107),
+    bg-containers: linear-gradient(to bottom, rgb(42, 47, 88) 70%, rgb(50, 56, 107) 100%),
+    bg-input__active: rgb(231, 229, 229),
+    color__a--links: whitesmoke,
+    color--texto: white,
+    subrayadoAfter: #e91e63,
+    
+    //INDEX
+    bg-texto--index:  rgb(80, 153, 255),
+    mayuscula--index: red,
+    texto--index: rgb(238, 228, 228),
+);
+    
+$fontSizes:(
+    font_a--links: 1.2em,
+    mayuscula--index: 1.7em,
+    titulos: 2em,
+    titulo--contacto: 3em,
+    parrafosMobile: 1.125em,
+    parrafo--contacto: 1.5em,
+    font_button: 1.25em,
+    offcanvas--links: 1.2em
+);
+    
+//EXTENDS
+    .titulos{
+        display: inline-block;
+        position: relative;
+        font-size: map-get($fontSizes, titulos);
+        font-weight: 700;
+        margin: 1em 0;
+        z-index: 0; 
+    }
+    
+    .after{
+        content: "";
+        background-color:map-get($paletaColores,subrayadoAfter);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    
+    .input{
+        color: black;
+        border-radius: 5px;
+        border: none;
+        margin: 1em 0;
+        width: 75ch;
+    }
+
+    .inputFocus{
+        outline: 2px solid map-get($paletaColores,bg-texto--index);
+        background-color: rgb(231, 229, 229);
+    }
+    
+    .boton{
+        background-color: map-get($paletaColores,bg-texto--index); 
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+//MIXINS
+    @mixin imgSizes($height,$width){
+        height: $height;
+        width: $width;
+    }
+    
+//RESETS
+    body{
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    
+    img{
+        max-width: 100%;
+        display: block;
+    }
+    
+    *{
+        font-family: $tipografia
+    }
+    

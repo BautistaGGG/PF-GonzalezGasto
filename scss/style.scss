@@ -1,0 +1,10 @@
+@import './partials/variables';
+
+@import './componentes/header.scss';
+@import './componentes/mainContent.scss';
+@import './componentes/footer.scss';
+
+body{
+    background-color: map-get($paletaColores, bg-body);
+    color: map-get($paletaColores, color--texto);
+}
