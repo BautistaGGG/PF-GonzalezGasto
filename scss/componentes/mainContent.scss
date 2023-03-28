@@ -14,6 +14,10 @@ main{
         }
     }
 
+    .section__article--imgs{
+        margin: 0;
+    }
+
 /*ABOUT*/
     .section--about__article--container{
         background-color: map-get($paletaColores,bg-containers);
@@ -37,7 +41,8 @@ main{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             place-items: center;
-            
+            gap: 1.5em;
+
             img{
                 height: 100%;
                 object-fit: cover;
@@ -83,91 +88,94 @@ main{
     }
 
 /*RIVALIDADES*/
+    .section--rivalidades__article--container{
+        padding: 0;
 
-.section--rivalidades__article-title{
-    @extend .titulos;
+        .section--rivalidades__article-title{
+            @extend .titulos;
 
-    &::after{
-        @extend .after;
-        height: 5px;
-        margin-bottom: 2px;
-        border-radius: 2px;
+            &::after{
+                @extend .after;
+                height: 5px;
+                margin-bottom: 2px;
+                border-radius: 2px;
+            }
+        }
+
+        .section--rivalidades__p{
+            max-width: 75ch;
+            line-height: 1.8;
+            margin: 1em 0;
+            font-size: map-get($fontSizes, parrafosMobile)
+        }
+
+        .rivalidades_a--link{
+            @extend .boton;
+            display: inline-block;
+            padding: .8em;
+            width: 100%;
+            margin: 2em auto;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
     }
-}
-
-.section--rivalidades__p{
-    max-width: 75ch;
-    line-height: 1.8;
-    margin: 1em 0;
-    font-size: map-get($fontSizes, parrafosMobile)
-}
-
-.rivalidades_a--link{
-    @extend .boton;
-    display: inline-block;
-    padding: .8em;
-    width: 100%;
-    margin: 2em auto;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-}
 
 /*CONTACTO*/
 
-.contacto__main--left{
-    h1{
-        @extend .titulos;
-        text-align: center;
-        text-shadow: 1px 1px 2px black;
-    }
-}
-
-.contacto__main--right{
-    
-    p{
-        font-size: map-get($fontSizes, parrafosMobile);
-        margin-bottom: 2em;
-    }
-
-    span{
-        position: relative;
-        font-weight: bold;
-
-        &::after{
-            @extend .after;
-            height: 8px;
+    .contacto__main--left{
+        h1{
+            @extend .titulos;
+            text-align: center;
+            text-shadow: 1px 1px 2px black;
         }
     }
-}
 
-form{
-    display: grid;
+    .contacto__main--right{
+        
+        p{
+            font-size: map-get($fontSizes, parrafosMobile);
+            margin-bottom: 2em;
+        }
 
-    input{
-        @extend .input;
-        width: auto;
-        padding: .8em 1.2em;
+        span{
+            position: relative;
+            font-weight: bold;
+
+            &::after{
+                @extend .after;
+                height: 8px;
+            }
+        }
     }
 
-    textarea{
-        height: 6em;
-        border-radius: 5px;
-        padding: .5em 1.2em;
-    }
+    form{
+        display: grid;
 
-    input:focus, 
-    textarea:focus{
-        @extend .inputFocus
-    }
+        input{
+            @extend .input;
+            width: auto;
+            padding: .8em 1.2em;
+        }
 
-    button{
-        @extend .boton;
-        padding: 1em 3em;
-        margin-top: 2em;
-        border-radius: 0.5em;
+        textarea{
+            height: 6em;
+            border-radius: 5px;
+            padding: .5em 1.2em;
+        }
+
+        input:focus, 
+        textarea:focus{
+            @extend .inputFocus
+        }
+
+        button{
+            @extend .boton;
+            padding: 1em 3em;
+            margin-top: 2em;
+            border-radius: 0.5em;
+        }
     }
-}
 
 /* ESTILOS DESKTOP*/
 @media (min-width:576px){

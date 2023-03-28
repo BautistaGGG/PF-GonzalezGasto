@@ -1,4 +1,4 @@
-.titulos, .contacto__main--left h1, .section--rivalidades__article-title, .palmares__main__section .palmares__main--title, .section--about__article--container .section--about__article-title {
+.titulos, .contacto__main--left h1, .section--rivalidades__article--container .section--rivalidades__article-title, .palmares__main__section .palmares__main--title, .section--about__article--container .section--about__article-title {
   display: inline-block;
   position: relative;
   font-size: 2em;
@@ -7,7 +7,7 @@
   z-index: 0;
 }
 
-.after, .contacto__main--right span::after, .section--rivalidades__article-title::after, .palmares__main__section .palmares__main--title::after, .section--about__article--container .section--about__article-title::after {
+.after, .contacto__main--right span::after, .section--rivalidades__article--container .section--rivalidades__article-title::after, .palmares__main__section .palmares__main--title::after, .section--about__article--container .section--about__article-title::after {
   content: "";
   background-color: #e91e63;
   position: absolute;
@@ -31,7 +31,7 @@ form textarea:focus {
   background-color: rgb(231, 229, 229);
 }
 
-.boton, form button, .rivalidades_a--link {
+.boton, form button, .section--rivalidades__article--container .rivalidades_a--link {
   background-color: rgb(80, 153, 255);
   color: white;
   font-weight: bold;
@@ -188,6 +188,10 @@ main {
   font-size: 1.7em;
 }
 
+.section__article--imgs {
+  margin: 0;
+}
+
 /*ABOUT*/
 .section--about__article--container {
   background-color: linear-gradient(to bottom, rgb(42, 47, 88) 70%, rgb(50, 56, 107) 100%);
@@ -205,6 +209,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
+  gap: 1.5em;
 }
 .section--about__article--container .section--about__aside img {
   height: 100%;
@@ -236,20 +241,21 @@ main {
 }
 
 /*RIVALIDADES*/
-.section--rivalidades__article-title::after {
+.section--rivalidades__article--container {
+  padding: 0;
+}
+.section--rivalidades__article--container .section--rivalidades__article-title::after {
   height: 5px;
   margin-bottom: 2px;
   border-radius: 2px;
 }
-
-.section--rivalidades__p {
+.section--rivalidades__article--container .section--rivalidades__p {
   max-width: 75ch;
   line-height: 1.8;
   margin: 1em 0;
   font-size: 1.125em;
 }
-
-.rivalidades_a--link {
+.section--rivalidades__article--container .rivalidades_a--link {
   display: inline-block;
   padding: 0.8em;
   width: 100%;
@@ -581,7 +587,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(50, 56, 107);
-  padding: 1em 1.5em;
+  padding: 1em 2.5em;
   margin-top: 1.5em;
 }
 footer p {
